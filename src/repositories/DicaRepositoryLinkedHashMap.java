@@ -1,8 +1,8 @@
 package repositories;
 
+import entities.Dica;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import entities.Dica;
 import validators.ValidadorDica;
 
 /**
@@ -24,12 +24,14 @@ public class DicaRepositoryLinkedHashMap {
 
     /**
      * Adiciona uma dica ao repositório
-     * @param dica
-     * @return
+     * @param dica a dica ser adicionada
+     * @return o número total de dicas no repositório após adição ou 0 se a dica não foi adicionada
+     * @throws NullPointerException se a dica for nula
      */
     public int adicionaDica(Dica dica){
         ValidadorDica.validaDica(dica);
-        return (dicas.put(++numeroDaDica, dica) == null ? numeroDaDica : 0);
+        dicas.put(++numeroDaDica, dica);
+        return numeroDaDica;
     }
 
     /**
@@ -38,7 +40,7 @@ public class DicaRepositoryLinkedHashMap {
      * @return um array de strings representando as dicas
      */
     public String[] listaDicas(){
-        if (this.dicas.size() == 0)
+        if (this.dicas.isEmpty())
             return new String[0];
         
         String[] lista = new String[dicas.size()];
@@ -55,7 +57,7 @@ public class DicaRepositoryLinkedHashMap {
      * @return um array de strings representando as dicas
      */
     public String[] listaDicasDetalhes(){
-        if (this.dicas.size() == 0)
+        if (this.dicas.isEmpty())
             return new String[0];
         
         String[] lista = new String[dicas.size()];
@@ -74,7 +76,7 @@ public class DicaRepositoryLinkedHashMap {
 	 * @throws IllegalArgumentException se posicao for inválida
 	 */
     public String listaDica(int posicao){
-        return dicas.get(posicao).toString();
+        return this.dicas.get(posicao).toString();
     }
 
     /**
