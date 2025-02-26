@@ -1,3 +1,4 @@
+#conding: utf-8
 from geradorDeUsuarios import listaUsuarios
 
 import random
@@ -32,3 +33,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+#os 2 scripts aqui
+#o script de Dicas chama o script de Usuarios pelo import 
+#tá vendo?
+#nice entao

@@ -1,9 +1,8 @@
 package repositories;
 
+import entities.Dica;
 import java.util.ArrayList;
 import java.util.List;
-
-import entities.Dica;
 import validators.ValidadorDica;
 
 /**
