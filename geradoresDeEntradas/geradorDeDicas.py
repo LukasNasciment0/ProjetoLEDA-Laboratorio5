@@ -7,7 +7,7 @@ import sys
 
 #Gera uma String aleatório de tamanho 10
 def geradorDeTemaAleatorio():
-    return ''.join(random.choices(string.ascii_letters, k=10))
+    return ''.join(random.choices(string.ascii_letters, k=10)) #k=10 é pra dizer que quero de tamanho 10
 
 #Retorna uma lista de strings com cada elemento representando uma Dica
 def listaDeDicasAleatorias(qtdDeDicas):
@@ -33,9 +33,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-#os 2 scripts aqui
-#o script de Dicas chama o script de Usuarios pelo import 
-#tá vendo?
-#nice entao
