@@ -30,6 +30,7 @@ public class UsuarioRepositoryLinkedHashMap {
      * @throws NullPointerException se o estudante for nulo
      */
 	public boolean adicionaEstudante(String cpf, Usuario estudante) {
+		if (cpf == null) throw new NullPointerException("O CPF do estudante não pode ser nulo");
 		ValidadorUsuario.validaUsuario(estudante);
 		
 		if (this.estudantes.containsKey(cpf))
@@ -66,6 +67,8 @@ public class UsuarioRepositoryLinkedHashMap {
      * @throws IllegalArgumentException se as credenciais forem inválidas
      */
 	public Usuario buscaEstudante(String cpf, String senha) {
+		ValidadorUsuario.validaCpf(cpf);
+		ValidadorUsuario.validaSenha(senha);
 		Usuario estudanteProcurado = this.estudantes.get(cpf);
 		ValidadorUsuario.validaUsuario(estudanteProcurado);
 		if (validaSenha(estudanteProcurado, senha)) {

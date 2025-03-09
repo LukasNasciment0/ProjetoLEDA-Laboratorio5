@@ -52,13 +52,14 @@ public class RelatorioTest {
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
 		String hoje = LocalDate.now().format(formato);
-		
-		assertEquals("Nome: Fulano, CPF: 123.456.789-00 - matrícula 123456789, data " + hoje + "\n"
+		String saida = "Nome: Fulano, CPF: 123.456.789-00 - matrícula 123456789, data " + hoje + "\n"
 				+ "Créditos por atividades:\n"
-				+ "PesquisaExtensao: 10\n"
-				+ "Estagio: 12\n"
 				+ "Monitoria: 14\n"
 				+ "RepresentacaoEstudantil: 2\n"
-				+ "Créditos totais: 38", relatorio.toString());
+				+ "Estagio: 12\n"
+				+ "PesquisaExtensao: 10\n"
+				+ "Créditos totais: 38";
+		
+		assertEquals(saida, relatorio.toString());
 	}
 }
