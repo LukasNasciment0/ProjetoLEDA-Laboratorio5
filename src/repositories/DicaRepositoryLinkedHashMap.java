@@ -34,6 +34,10 @@ public class DicaRepositoryLinkedHashMap {
         return numeroDaDica;
     }
 
+    public boolean isEmpty() {
+    	return dicas.isEmpty();
+    }
+    
     /**
      * Retorna uma lista das dicas como strings.
      *
@@ -46,7 +50,7 @@ public class DicaRepositoryLinkedHashMap {
         String[] lista = new String[dicas.size()];
         int i = 0;
         while (i < dicas.size())
-            lista[i] = dicas.get(i++).toString();
+            lista[i] = dicas.get(++i).toString();
         
         return lista;
     }

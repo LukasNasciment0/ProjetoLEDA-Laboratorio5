@@ -49,6 +49,19 @@ public class UsuarioController {
 		return this.usuarioRepository.listaEstudantesRankingDicas();
 	}
 	
+	/*
+	 * No caso:
+	 * Gerar um arquivo txt com as entradas de usuario e deixar como padrao
+	 * pra aí a gente poder trabalhar em cima delas
+	 * e então pegar essas entradas e definir as bonificacoes
+	 * 
+	 * 
+	 * massa vai ser esquecer esse coment e dar push com ele no codigo
+	 * 
+	 * 
+	 * ó
+	 */
+
 	/**
      * Altera a senha de um estudante.
      *
